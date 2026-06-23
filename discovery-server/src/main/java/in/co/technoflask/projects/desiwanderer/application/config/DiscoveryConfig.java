@@ -1,0 +1,8 @@
+package in.co.technoflask.projects.desiwanderer.application.config;
+
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableEurekaServer
+public class DiscoveryConfig {}
