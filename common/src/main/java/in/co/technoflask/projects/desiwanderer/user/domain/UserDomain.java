@@ -1,5 +1,6 @@
 package in.co.technoflask.projects.desiwanderer.user.domain;
 
+import in.co.technoflask.projects.desiwanderer.comment.domain.CommentDomain;
 import in.co.technoflask.projects.desiwanderer.image.domain.ImageDomain;
 import in.co.technoflask.projects.desiwanderer.post.domain.PostDomain;
 import java.util.HashSet;
@@ -31,6 +32,10 @@ public interface UserDomain {
   }
 
   default Set<? extends PostDomain> getPosts() {
+    return new HashSet<>();
+  }
+
+  default Set<? extends CommentDomain> getComments() {
     return new HashSet<>();
   }
 }
