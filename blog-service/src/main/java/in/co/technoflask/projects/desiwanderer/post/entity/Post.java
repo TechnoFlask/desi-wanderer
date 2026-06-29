@@ -1,6 +1,7 @@
 package in.co.technoflask.projects.desiwanderer.post.entity;
 
 import in.co.technoflask.projects.desiwanderer.comment.entity.Comment;
+import in.co.technoflask.projects.desiwanderer.image.entity.Image;
 import in.co.technoflask.projects.desiwanderer.post.domain.PostDomain;
 import in.co.technoflask.projects.desiwanderer.user.entity.User;
 import jakarta.persistence.Column;
@@ -63,6 +64,11 @@ public class Post implements PostDomain {
 
   @Column(name = "is_approved", nullable = false)
   private Boolean isApproved;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "image_id", nullable = false)
+  @ToString.Exclude
+  private Image image;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "author_id", nullable = false)
