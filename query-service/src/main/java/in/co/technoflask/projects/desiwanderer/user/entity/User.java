@@ -1,6 +1,7 @@
 package in.co.technoflask.projects.desiwanderer.user.entity;
 
 import in.co.technoflask.projects.desiwanderer.comment.entity.Comment;
+import in.co.technoflask.projects.desiwanderer.image.entity.Image;
 import in.co.technoflask.projects.desiwanderer.post.entity.Post;
 import in.co.technoflask.projects.desiwanderer.user.domain.UserDomain;
 import jakarta.persistence.Column;
@@ -57,4 +58,9 @@ public class User implements UserDomain {
   @Builder.Default
   @ToString.Exclude
   private Set<Comment> comments = new HashSet<>();
+
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
+  @Builder.Default
+  @ToString.Exclude
+  private Set<Image> images = new HashSet<>();
 }
