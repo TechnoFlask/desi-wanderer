@@ -1,6 +1,7 @@
 package in.co.technoflask.projects.desiwanderer.kafka.config;
 
 import in.co.technoflask.projects.desiwanderer.kafka.annotation.KafkaConsumerFactoryBuilder;
+import in.co.technoflask.projects.desiwanderer.kafka.annotation.KafkaProducerFactoryBuilder;
 import org.springframework.boot.kafka.autoconfigure.KafkaProperties;
 import org.springframework.context.annotation.Bean;
 
@@ -9,5 +10,10 @@ public class KafkaConsumerFactoryBuilderConfig {
   @Bean
   KafkaConsumerFactoryBuilder kafkaConsumerFactoryBuilder(KafkaProperties kafkaProperties) {
     return new KafkaConsumerFactoryBuilder(kafkaProperties);
+  }
+
+  @Bean
+  KafkaProducerFactoryBuilder kafkaProducerFactoryBuilder(KafkaProperties kafkaProperties) {
+    return new KafkaProducerFactoryBuilder(kafkaProperties);
   }
 }
